@@ -4,17 +4,62 @@ const fs = require('fs')
 
 
 const requestListner = function (req,res) {
-if(req.url === '/home') { 
+
+
+if(req.url === '/') { 
+
  try 
     {
-
+        res.statusCode = 200
         const data = fs.readFileSync('/home/sam/projects/basic_views/index.html', 'utf8')
         res.end(data)
     }
     catch(err) 
     {console.error(err)}
 }
-if(req.url === '/about') { console.log('URL IS HOME');}
+
+else if(req.url === '/about') { 
+    try 
+    {
+        res.statusCode = 200
+         const data = fs.readFileSync('/home/sam/projects/basic_views/about.html', 'utf8')
+        res.end(data)
+    }
+    catch(err) 
+    {console.error(err)}
+    
+
+}
+else if(req.url === '/contact') { 
+    try 
+    {
+        res.statusCode = 200
+ const data = fs.readFileSync('/home/sam/projects/basic_views/contact.html', 'utf8')
+        res.end(data)
+    }
+    catch(err) 
+    {console.error(err)}
+    
+
+}
+
+else { 
+ 
+    try 
+    {
+        // res.statusCode = 404
+ const data = fs.readFileSync('/home/sam/projects/basic_views/404.html', 'utf8')
+        res.end(data)
+    }
+    catch(err) 
+    {console.error(err)}
+    
+    
+}
+
+
+
+
 }
 
 
