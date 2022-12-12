@@ -9,7 +9,7 @@ if(req.url === '/home') {
     {
 
         const data = fs.readFileSync('/home/sam/projects/basic_views/index.html', 'utf8')
-     
+        res.end(data)
     }
     catch(err) 
     {console.error(err)}
